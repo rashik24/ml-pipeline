@@ -1,9 +1,12 @@
 import json
-from pathlib import Path
 
-metrics = json.load(open("ml/artifacts/metrics.json"))
+metrics = json.load(open("artifacts/metrics.json"))
 
-best_auc = max(v["Mean AUC"] for v in metrics.values())
+# Pandas saved metrics column-wise:
+# {"Mean AUC": {"RF":0.8, "SVM":0.7}, ...}
+
+mean_auc_dict = metrics["Mean AUC"]
+best_auc = max(mean_auc_dict.values())
 
 print("Best AUC:", best_auc)
 
