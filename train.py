@@ -393,14 +393,14 @@ except Exception as e:
 import joblib
 import json
 from pathlib import Path
+from pathlib import Path
+import joblib
 
-ART = Path("ml/artifacts")
-ART.mkdir(parents=True, exist_ok=True)
+ART = Path("artifacts")
+ART.mkdir(exist_ok=True)
 
-# Save final model
 joblib.dump(final_pipe, ART / "model.joblib")
-
-# Save performance table
 perf_ML.to_json(ART / "metrics.json")
 
 print("Saved model and metrics.")
+
