@@ -35,7 +35,8 @@ RANDOM_STATE = 0
 # -----------------------------
 # 0) Load data & feature engineering (edit paths/columns as needed)
 # -----------------------------
-df = pd.read_csv("dataset.csv")
+df = pd.read_csv("data/dataset.csv")
+
 
 df['IQR_over_Median'] = df['IQR'] / df['Median']
 df['P90_over_Median'] = df['P90'] / df['Median']
