@@ -1,0 +1,9 @@
+numpy
+pandas
+scikit-learn
+imbalanced-learn
+xgboost
+joblib
+statsmodels
+shap
+pytest
